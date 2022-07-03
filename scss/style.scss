@@ -1,7 +1,7 @@
 $color_grey: #868585;
-$color_white: #FFFFFF;
+$color_white: #ffffff;
 $color_black: #303030;
-$color_yellow: #A9A32A;
+$color_yellow: #a9a32a;
 
 @mixin h0 {
   font-size: 64px;
@@ -52,20 +52,20 @@ body {
   margin: 0 auto;
 }
 
-.btn-link{
+.btn-link {
   display: block;
   width: 308px;
   height: 100px;
   position: relative;
 
-  .button{
+  .button {
     border-radius: 50%;
     width: 100px;
     height: 100px;
     border: 2px solid;
-    transition: all .3s;
+    transition: all 0.3s;
 
-    svg{
+    svg {
       margin: 42.5px 29px 42.5px 29px;
     }
   }
@@ -74,15 +74,53 @@ body {
     position: absolute;
     top: 64px;
     left: 50px;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 }
-.btn-link:hover{
-  .button{
-    background-color: #A9A32A;
+.btn-link:hover {
+  .button {
+    background-color: #a9a32a;
     transform: scale(1.1);
   }
+}
 
+.social {
+  svg {
+    margin: 0;
+    transition: all 0.3s;
+  }
+  a {
+    margin: 0 20px 0 0;
+
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+    a:last-child {
+      margin: 0;
+    }
+  }
+}
+.slide-arrows {
+  width: 102px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  svg path {
+    transition: all .3s;
+  }
+
+  .arrows-link:hover {
+    svg path {
+      fill: $color_yellow;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: flex-end;
+  }
 }
 
 // ================================header=============================================
@@ -92,85 +130,62 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 150px;
-}
-.header__block{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 
-  svg {
-    margin: 70px auto 140px auto;
-  }
-
-  p, h1, h2 {
-    color: $color_white;
-  }
-
-  p{
-    @include p18;
-  }
-
-  h1 {
-    @include h0;
-    min-height: 86px;
+  .header__block {
     display: flex;
-    align-items: flex-end;
-    margin-bottom: 3px;
-  }
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-  h2 {
-    @include discriptor;
-    min-height: 57px;
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 50px;
-  }
-
-  .header__btn-block{
-    margin-bottom: 250px;
-  }
-
-  .header__btn{
-    border-color: $color_white;
-  }
-
-  .social{
-    svg{
-      margin: 0;
-    }
-    a{
-      margin: 0 20px 0 0;
-    }
-    a:last-child{
-      margin: 0;
-    }
-  }
-  
-}
-.slide-arrows{
-  width: 102px;
-  height: 30px;
-  display: flex;
-  justify-content: space-between;
-
-  .slide__arrows-link:hover{
-    svg path {
-        fill: $color_yellow;
-      }
+    svg {
+      margin: 70px auto 140px auto;
     }
 
-    a {
+    p,
+    h1,
+    h2 {
+      color: $color_white;
+    }
+
+    p {
+      @include p18;
+    }
+
+    h1 {
+      @include h0;
+      min-height: 86px;
       display: flex;
       align-items: flex-end;
+      margin-bottom: 3px;
     }
+
+    h2 {
+      @include discriptor;
+      min-height: 57px;
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 50px;
+    }
+
+    .header__btn-block {
+      margin-bottom: 250px;
+    }
+
+    .header__btn {
+      border-color: $color_white;
+    }
+
+    .social{
+      svg {
+        margin: 0;
+      }
+    }
+  }
 }
-
-
 
 // ================================services=============================================
 
-.services{
+.services {
   min-height: 763px;
   margin-bottom: 150px;
 
@@ -179,56 +194,62 @@ header {
     color: $color_grey;
     margin-bottom: 60px;
   }
-  .services__content{
-    display: flex;
-
-    img{
-      max-height: 670px;
+  .services__content {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+    gap: 90px;
+    
+    .services__content-text {
+      
+      h2 {
+        @include h2;
+        color: $color_black;
+        margin-bottom: 15px;
+      }
+      p {
+        @include p14();
+        color: $color_black;
+        margin-bottom: 50px;
+      }
+    
+      .services__img{
+        text-align: -webkit-center;
+    
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
   }
-  .services__content-text{
-    max-width: 510px;
-    margin-right: 89px;
-
-    h2 {
-      @include h2;
-      color: $color_black;
-      margin-bottom: 15px;
-    }
-    p {
-      @include p14();
-      color: $color_black;
-      margin-bottom: 50px;
-    }
-  }
-  
-
 }
 
 // ================================greentarif=============================================
 
-.greentarif{
+.greentarif {
   min-height: 765px;
   margin-bottom: 150px;
 
-  h1{
+  h1 {
     @include h1;
     color: $color_grey;
     margin-bottom: 60px;
   }
 
-  .greentarif__content{
+  .greentarif__content {
     display: flex;
   }
-  .greentarif__content-left{
+  .greentarif__content-left {
     max-width: 510px;
     margin-right: 90px;
-  }
-  .greentarif__content-tabs{
+    position: relative;
+
+  .greentarif__content-tabs {
     display: flex;
     margin-bottom: 125px;
 
-    a{
+    a {
       @include p18;
       margin-right: 40px;
     }
@@ -236,12 +257,12 @@ header {
       border-bottom: 1px solid $color_black;
     }
   }
-  .greentarif__content-slider{
+  .greentarif__content-slider {
     margin-bottom: 100px;
+    
   }
   .greentarif__content-slide {
-    display: flex;
-    position: relative;
+    display: flex;  
 
     img {
       margin-right: 40px;
@@ -250,44 +271,33 @@ header {
     p {
       @include p14;
     }
-
-    .greentarif__content-slide-arrows{
-      position: absolute;
-      bottom: 0%;
-      right: 27%;
-
-      .slide__arrows-link:hover{
-        svg path {
-            fill: $color_yellow;
-          }
-        }
-
-      a {
-        display: flex;
-        align-items: flex-end;
-      }
-    }
+  }
+  .greentarif__content-slide-arrows {
+    position: absolute;
+    bottom: 50.5%;
+    right: 26%;
   }
 
-  .greentarif__content-info{
+  .greentarif__content-info {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     gap: 40px;
 
-    h2{
+    h2 {
       @include h2();
       margin-bottom: 5px;
     }
-    p{
+    p {
       @include p14;
     }
   }
-  .greentarif__content-right{
+}
+  .greentarif__content-right {
     max-width: 600px;
     display: flex;
     flex-direction: column;
 
-    h2{
+    h2 {
       @include h2;
       margin-bottom: 27px;
     }
@@ -296,7 +306,7 @@ header {
 
 // ================================quotes=================================================
 
-.quotes{
+.quotes {
   background: url("../img/4.quotes/Rectangle\ 10.jpg") center center / cover no-repeat;
   min-height: 500px;
   display: flex;
@@ -314,50 +324,204 @@ header {
 }
 
 // ================================quotes=================================================
-.ourclients{
-  min-height: 495px;
+.ourclients {
+  max-height: 495px;
   margin-bottom: 150px;
 
-  h1{
+  h1 {
     @include h1();
     color: $color_grey;
     margin-bottom: 60px;
   }
-  .ourclients__inner{
+  .ourclients__inner {
     display: flex;
-  }
-  .ourclients__slider{
-    margin-bottom: 32px;
-    margin-right: 91px;
     position: relative;
-  }
 
-  .ourclients__slide-arrows{
-    position: absolute;
-    bottom: -11%;
-    right: 26%;
-
-  }
-
-
-  .ourclients__content{
-    h2{
-      @include h2();
-      margin-bottom: 30px;
-    }
-    p{
-      @include p14();
-      margin-bottom: 15px;
-      padding: 0 0 0 51;
+    .ourclients__slider {
+      max-width: 510px;
+      margin-bottom: 32px;
+      margin-right: 91px;
     }
 
-    .ourclients__btn{
-      margin-top: 50px;
-      border-color: $color_black;
+    .ourclients__slide-arrows {
+      position: absolute;
+      bottom: 0%;
+      left: 23%;
+    }
 
-      svg path{
-        fill: $color_black;
+    .ourclients__content {
+      h2 {
+        @include h2();
+        margin-bottom: 30px;
+      }
+      p {
+        @include p14();
+        margin-bottom: 15px;
+        padding: 0 0 0 51px;
+      }
+  
+      .ourclients__btn {
+        margin-top: 65px;
+        border-color: $color_black;
+  
+        svg path {
+          fill: $color_black;
+        }
       }
     }
   }
+
+
+
+
+
+}
+
+// ================================steps==================================================
+
+.steps {
+  max-height: 730px;
+  margin-bottom: 150px;
+  display: flex;
+
+  .steps__ineer {
+    display: flex;
+
+    .steps__content {
+      max-width: 510px;
+      margin-right: 90px;
+
+      h1 {
+        @include h1;
+        color: $color_grey;
+        margin-bottom: 60px;
+      }
+
+      li {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .steps__number {
+          @include p14();
+          color: $color_grey;
+          margin-bottom: 11px;
+        }
+
+        h2 {
+          @include h2;
+          margin-bottom: 2px;
+        }
+
+        p {
+          @include p14;
+        }
+      }
+    }
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+// ================================footer=================================================
+
+.footer {
+  background: url("../img/7.footer/Rectangle\ 13.jpg") center center / cover no-repeat;
+  min-height: 730px;
+
+  h1 {
+    @include h1();
+    color: $color_white;
+    margin-bottom: 60px;
+  }
+
+  p {
+    @include p18;
+    color: $color_white;
+  }
+
+  path {
+    fill: $color_white;
+  }
+
+  .footer__body {
+    display: flex;
+    padding: 70px 0 0 0;
+
+    .footer__request {
+      max-width: 510px;
+      width: 100%;
+      margin-right: 90px;
+
+      .footer__request-form-row {
+        width: 100%;
+        min-height: 30px;
+        margin-bottom: 60px;
+        border: none;
+        border-bottom: 1px solid #fff;
+
+        .footer__request-form-input {
+          width: 100%;
+          height: 100%;
+          @include p14;
+          color: $color_white;
+          background: transparent;
+
+          &::placeholder {
+            color: $color_white;
+            @include p14();
+          }
+        }
+      }
+
+      .footer__request-btn {
+        border-color: $color_white;
+
+        svg path {
+          fill: $color_white;
+        }
+      }
+    }
+
+    .footer__contacts {
+      margin-bottom: 150px;
+      p {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .footer__bottom {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+    gap: 10px;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .social {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .social {
+      a {
+        &:hover {
+          svg {
+            path {
+              fill: $color_yellow;
+            }
+          }
+        }
+      }
+    }
+}
 }
