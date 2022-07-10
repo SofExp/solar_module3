@@ -1,0 +1,37 @@
+@mixin h0 {
+  font-size: 64px;
+  font-weight: Bold;
+}
+@mixin discriptor {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 57px;
+}
+@mixin h1 {
+  font-size: 24px;
+  font-weight: Bold;
+  line-height: 33px;
+}
+@mixin h2 {
+  font-size: 18px;
+  font-weight: Bold;
+  line-height: 25px;
+}
+@mixin p18 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+}
+@mixin p14 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
+@mixin hover_btn {
+  background-color: $color_grey;
+}
+@mixin main_content_grid {
+  display: grid;
+  grid-template: repeat(1, 1fr) / .92fr 1.08fr;
+  gap: 90px;
+}
